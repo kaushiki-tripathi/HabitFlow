@@ -4,7 +4,8 @@ const AuthContext = createContext(null);
 const TOKEN_KEY = "habitflow_token";
 const USER_KEY = "habitflow_user";
 
-const API_BASE_URL = "http://localhost:5000/api/auth";
+const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const API_BASE_URL = `${BASE_URL}/api/auth`
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
