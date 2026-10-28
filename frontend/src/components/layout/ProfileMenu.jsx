@@ -33,7 +33,7 @@ export default function ProfileMenu({
       document.removeEventListener("keydown", onKeyDown);
     };
   }, [open, onClose]);
-
+  
   return (
     <div className="relative hidden lg:block" ref={ref}>
       <button

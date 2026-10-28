@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
-import { LogOut, User } from "lucide-react";
+import { Link, NavLink } from "react-router-dom";
+import { LogOut, ChevronRight } from "lucide-react";
 import UserAvatar from "./UserAvatar";
 import { APP_NAV_LINKS } from "./navLinks";
 
@@ -21,7 +21,12 @@ export default function MobileNavDrawer({
           : "invisible -translate-y-4 opacity-0"
       }`}
     >
-      <div className="mb-3 flex items-center gap-3 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-subtle)]/70 px-3 py-3 dark:border-[#2F2A25] dark:bg-[#27231F]/70">
+      {/* Tapping User Banner opens Profile page */}
+      <Link
+        to="/profile"
+        onClick={onNavigate}
+        className="mb-3 flex items-center gap-3 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-subtle)]/70 px-3 py-3 transition hover:bg-[var(--bg-subtle)] dark:border-[#2F2A25] dark:bg-[#27231F]/70 dark:hover:bg-[#27231F]"
+      >
         <UserAvatar name={name} avatar={avatar} size="lg" />
         <div className="min-w-0 flex-1">
           <p className="truncate text-sm font-semibold text-[var(--text-main)]">{name}</p>
@@ -29,8 +34,8 @@ export default function MobileNavDrawer({
             <p className="truncate text-xs text-[var(--text-muted)]">{email}</p>
           ) : null}
         </div>
-        <User size={16} className="shrink-0 text-[var(--text-muted)]" />
-      </div>
+        <ChevronRight size={18} className="shrink-0 text-[var(--text-muted)]" />
+      </Link>
 
       <nav aria-label="Mobile navigation" className="flex flex-col gap-1">
         {APP_NAV_LINKS.map(({ label, to }) => (
