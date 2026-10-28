@@ -15,7 +15,7 @@
 *(Note: Add a beautiful screenshot of y our Dashboard here!)*
 <!-- ![HabitFlow Dashboard](./screenshots/dashboard.png) -->
 
-## ✨ Technical Highlights (For Recruiters)
+## ✨ Technical Highlights
 
 I built this project to demonstrate end-to-end full-stack capabilities, focusing on clean architecture, secure authentication, and user experience.
 
